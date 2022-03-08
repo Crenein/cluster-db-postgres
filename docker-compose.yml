@@ -1,0 +1,37 @@
+version: "3.9"
+   
+services:
+
+  db:
+    container_name: "db"
+    image: postgis/postgis
+    ports:
+      - "5432:5432"  
+    environment: 
+      - DATABASE_HOST=127.0.0.1
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=test
+      - POSTGRES_DB=postgres
+    volumes:
+      - maple2:/var/lib/postgresql/data
+      - ./backups:/home/backups
+
+  pgadmin:
+    container_name: "pgadmin4"
+    image: "dpage/pgadmin4"
+    ports:
+      - "5433:80"    
+    environment:
+      PGADMIN_DEFAULT_EMAIL: admin@admin.com
+      PGADMIN_DEFAULT_PASSWORD: admin
+    volumes:
+      - pgadmin4-vol:/var/lib/pgadmin
+
+
+volumes:
+  maple2:
+    name: maple2
+    external: true
+  pgadmin4-vol:
+    name: pgadmin4-vol
+    external: true
