@@ -27,7 +27,6 @@ services:
     volumes:
       - pgadmin4-vol:/var/lib/pgadmin
 
-
 volumes:
   maple2:
     name: maple2
