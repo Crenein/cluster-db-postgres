@@ -1,1 +1,3 @@
-# cluster-db-postgres
+# crear volumen de docker
+
+docker volume create maple2
