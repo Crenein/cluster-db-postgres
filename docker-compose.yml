@@ -10,7 +10,7 @@ services:
     environment: 
       - DATABASE_HOST=127.0.0.1
       - POSTGRES_USER=postgres
-      - POSTGRES_PASSWORD=test
+      - POSTGRES_PASSWORD=test123
       - POSTGRES_DB=postgres
     volumes:
       - maple2:/var/lib/postgresql/data
